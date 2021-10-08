@@ -15,11 +15,7 @@ export default class ProfilePage extends Component {
           path={`${this.props.match.url}/send`}
           render={() => {
             return (
-              <Modal
-                onClick={() => {
-                  this.props.history.push(this.props.match.url);
-                }}
-              >
+              <Modal>
                 <div
                   style={{
                     display: "flex",
@@ -30,6 +26,13 @@ export default class ProfilePage extends Component {
                 >
                   <div>
                     {" "}
+                    <button
+                      onClick={() => {
+                        this.props.history.push(this.props.match.url);
+                      }}
+                    >
+                      X
+                    </button>
                     <h3>Send Gift</h3>{" "}
                     <form>
                       {" "}
