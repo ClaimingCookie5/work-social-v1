@@ -1,5 +1,6 @@
 import "./App.css";
-import button from "./components/user-profile/user-profile.js";
+// import button from "./components/user-profile/modal.js";
+import { useState } from "react";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import EditUser from "./components/edit-user.component";
@@ -14,9 +15,12 @@ function App() {
       <Route path="/edit/:id" component={EditUser} />
       <Route path="/profile/username" component={button} />
       <Route path="/profile" component={ProfilePage} />
-      <Route path="/sendgift" component={SendGiftForm} />
+      <Route path="/profile/sendgift" component={SendGiftForm} />
     </Router>
   );
+  {
+    openModal && <Modal />;
+  }
 }
 
 export default App;
