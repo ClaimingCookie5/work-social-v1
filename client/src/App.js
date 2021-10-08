@@ -2,7 +2,7 @@ import "./App.css";
 // import button from "./components/user-profile/user-profile.js";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Switch, Link } from "react-router-dom";
+
 import EditUser from "./components/edit-user.component";
 import CreateUser from "./components/create-user.components.js";
 import ProfilePage from "./components/user-profile/profile-page.component";
@@ -14,10 +14,8 @@ function App() {
       <Route path="/signup" component={CreateUser} />
       <Route path="/edit/:id" component={EditUser} />
       {/* <Route path="/profile/username" component={button} /> */}
-      <Switch>
-        <Route path="/profile" component={ProfilePage} />
-        <Route path="/profile/sendgift" component={SendGiftForm} />
-      </Switch>
+      <Route path="/profile" component={ProfilePage} />
+      <Route path="/profile/sendgift" component={SendGiftForm} />
     </Router>
   );
 }
