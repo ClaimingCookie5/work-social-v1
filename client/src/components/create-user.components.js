@@ -80,7 +80,7 @@ export default class CreateUser extends Component {
             />
           </div>
           <div>
-            <input
+            <input className="blablah"
               type='password'
               value={this.state.password}
               onChange={this.onChangePassword}
