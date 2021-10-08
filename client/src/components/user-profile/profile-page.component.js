@@ -1,27 +1,39 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { Modal } from "modal.js";
+import { Route, Link } from "react-router-dom";
+import Modal from "./modal";
 
 export default class ProfilePage extends Component {
-  sendGiftForm() {
-    const [openModal, setOpenModal] = useState(false);
-    <button
-      className="openModalBtn"
-      OnClick={() => {
-        setOpenModal(true);
-      }}
-    >
-      Send Gift
-    </button>;
-    {
-      openModal && <Modal />;
-    }
-  }
   render() {
     return (
       <div>
-        <h3>Profile Pic goes here</h3>
-        <button onClick={sendGiftFrom()}>Send Gift</button>
+        <Link to={`${this.props.match.url}/send`}>Send Gift</Link>
+        {/* <Link to={{ pathname: this.props.match.url, search: "?login=true" }}>
+          Leave Message
+        </Link> */}
+
+        <Route
+          path={`${this.props.match.url}/send`}
+          render={() => {
+            return (
+              <Modal
+                onClick={() => {
+                  this.props.history.push(this.props.match.url);
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    height: "100%",
+                  }}
+                >
+                  Buy me Beer
+                </div>
+              </Modal>
+            );
+          }}
+        />
       </div>
     );
   }
