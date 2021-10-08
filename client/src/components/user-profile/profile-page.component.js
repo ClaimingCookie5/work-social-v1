@@ -28,7 +28,30 @@ export default class ProfilePage extends Component {
                     height: "100%",
                   }}
                 >
-                  Buy me Beer
+                  <div>
+                    {" "}
+                    <h3>Send Gift</h3>{" "}
+                    <form>
+                      {" "}
+                      <div>
+                        <input type="text" placeholder="Name" />{" "}
+                      </div>{" "}
+                      <div>
+                        <input type="email" required placeholder="Email" />{" "}
+                      </div>{" "}
+                      <div>
+                        {" "}
+                        <input
+                          className="Message"
+                          type="message"
+                          placeholder="Enter message here"
+                        />
+                      </div>
+                      <div>
+                        <input type="submit" value="Send Gift" />
+                      </div>
+                    </form>
+                  </div>
                 </div>
               </Modal>
             );
