@@ -26,7 +26,7 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-const usersRouter = require('routes/users');
+const usersRouter = require('./routes/users');
 app.use('/users', usersRouter);
 
 app.listen(port, () => {
