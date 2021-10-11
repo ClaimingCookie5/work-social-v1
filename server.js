@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const path = require('path');
-const usersRouter = require('./routes/users');
 
 require('dotenv').config();
 
@@ -27,6 +26,7 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
+const usersRouter = require('routes/users');
 app.use('/users', usersRouter);
 
 app.listen(port, () => {
