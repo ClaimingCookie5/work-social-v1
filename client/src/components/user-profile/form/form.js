@@ -1,6 +1,15 @@
-import React from "react";
+import StripeCheckout from "react-stripe-checkout";
+import { useState, useEffect } from "react";
+
+const KEY =
+  "pk_test_51Jj97mFjKtpO9Sxr3ooea52A6mRUwCAMAsFfSmkqQwiLRq2y2krLim9DeUOASuZwBPtYCSXvX5Nj2X3Lf0VfvHKB00r77vAAZ1";
 
 export const Form = ({ onSubmit }) => {
+  const onToken = (token) => {
+    // setStripeToken(token);
+    consol.log(token);
+  };
+
   return (
     <form onSubmit={onSubmit}>
       <div className="form-group">
@@ -31,9 +40,19 @@ export const Form = ({ onSubmit }) => {
         />
       </div>
       <div className="form-group">
-        <button className="form-control btn btn-primary" type="submit">
-          Send
-        </button>
+        <StripeCheckout
+          name="ItsOnMe"
+          img="images/cocktail_emoji.jpeg"
+          email
+          description="your gift will be £5"
+          amount={500}
+          token={onToken}
+          stripeKey={KEY}
+        >
+          <button className="form-control btn btn-primary" type="submit">
+            Send
+          </button>
+        </StripeCheckout>
       </div>
     </form>
   );
