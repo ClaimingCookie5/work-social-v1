@@ -3,11 +3,13 @@ import button from './components/user-profile/user-profile.js';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import EditUser from './components/edit-user.component';
+import Default from './components/default';
 import CreateUser from './components/create-user.components.js';
 
 function App() {
   return (
     <Router>
+      <Route path='/' component={Default} />
       <Route path='/signup' component={CreateUser} />
       <Route path='/edit/:id' component={EditUser} />
       <Route path='/profile/username' component={button} />
